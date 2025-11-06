@@ -4,9 +4,9 @@ import torch as t
 from config.config import opt
 class DefaultConfig(object):
     def __init__(self):
-        self.env = 'default'  # visdom 环境
-        self.vis_port = 8097  # visdom 端口
-        self.model = 'CRNN'  # 使用的模型，名字必须与models/__init__.py中的名字一致
+        self.env = 'default' 
+        self.vis_port = 8097 
+        self.model = 'CRNN' 
         self.wav_path = ''
         ## Training parameters
         self.num_frames = 400     # Duration of the input segments
@@ -37,9 +37,6 @@ class DefaultConfig(object):
         self.input_channels = 1
         self.device = opt.device
     def _parse(self, kwargs):
-        """
-        根据字典kwargs 更新 config参数
-        """
         for k, v in kwargs.items():
             if not hasattr(self, k):
                 warnings.warn("Warning: opt has not attribut %s" % k)
