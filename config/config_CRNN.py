@@ -1,4 +1,3 @@
-# coding:utf8
 import warnings, os
 import torch as t
 from config.config import opt
