@@ -38,9 +38,7 @@ class DefaultConfig(object):
         self.device = opt.device
 
     def _parse(self, kwargs):
-        """
-        根据字典kwargs 更新 config参数
-        """
+
         for k, v in kwargs.items():
             if not hasattr(self, k):
                 warnings.warn("Warning: opt has not attribut %s" % k)
