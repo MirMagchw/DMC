@@ -111,7 +111,7 @@ def gcc_phat(x1, x2, fs=16000):
     X1 = np.fft.fft(x1.flatten(), NFFT)
     X2 = np.fft.fft(x2.flatten(), NFFT)
     # Cross-correlation in frequency domain
-    P = X1 * np.conj(X2)#X2作为参考信号
+    P = X1 * np.conj(X2)# X2 as reference signal
     # Calculate A (magnitude reciprocal)
     A = 1.0 / np.abs(P)
     # First estimation method
