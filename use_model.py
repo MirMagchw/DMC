@@ -25,14 +25,10 @@ torch.multiprocessing.set_sharing_strategy('file_system')
 def get_cluster(model_use, cluster_method, ref_choice, n_speaker, snr, t60, **kwargs):
     if t60 == 666:
         rooms = [
-            {'size': [4.7, 3.4, 2.4], 't60': 0.4},
-            {'size': [6.7, 4.9, 3.5], 't60': 0.6},
             {'size': [9.3, 6.9, 4.9], 't60': 0.8}
         ]
     else:
         rooms = [
-            {'size': [6.7, 4.9, 3.5], 't60': t60},
-            {'size': [6.7, 4.9, 3.5], 't60': t60},
             {'size': [6.7, 4.9, 3.5], 't60': t60}
         ]
     model = None
@@ -71,7 +67,7 @@ def get_cluster(model_use, cluster_method, ref_choice, n_speaker, snr, t60, **kw
     unique_scenes = location_results['room_scene'].unique()
     all_clustering_results = {}
     k_different = 0
-    room_params = rooms[1]
+    room_params = rooms[0]
     V = room_params['size'][0]*room_params['size'][1]*room_params['size'][2]
     T = room_params['t60']
     critical_distance = ((0.01/np.pi)*(V/T))**0.5
