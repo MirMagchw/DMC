@@ -7,6 +7,6 @@ Results show the superiority of CRNN over other features, the efficacy of indivi
 ## our Framework
 ### test
 ```bash
-python main.py test  --model_use='CRNN_featureModel' --ref_choice='GCC_PATH' --cluster_method='CountNet' --n_speaker=2 --snr=10
+python main.py test  --model_use='CRNN_featureModel' --ref_choice='GCC_PHAT' --cluster_method='CountNet' --n_speaker=2 --snr=10
 ```
 
